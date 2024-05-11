@@ -81,7 +81,7 @@ jobs:
             username: ${{ secrets.USER_NAME }}
             password: ${{ secrets.USER_PASSWORD }}
             script: |
-              cd /home/lishaojie/web-ohname # Specify the path to your app directory on the server
+              cd /home/lishaojie/www
               git pull
               npm install
               npm run build
