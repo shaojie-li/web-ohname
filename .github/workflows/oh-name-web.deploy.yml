@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           password: ${{ secrets.USER_PASSWORD }}
           source: './'
-          target: /home/${{ secrets.USER_NAME }}/web-ohname/
+          target: /home/${{ secrets.USER_NAME }}/www/web-ohname/
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -52,7 +52,7 @@ jobs:
             username: ${{ secrets.USER_NAME }}
             password: ${{ secrets.USER_PASSWORD }}
             script: |
-              cd /home/${{ secrets.USER_NAME }}/web-ohname/
+              cd /home/${{ secrets.USER_NAME }}/www/web-ohname/
               npm install
               npm run lint
               npm run typecheck
