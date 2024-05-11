@@ -57,4 +57,4 @@ jobs:
               npm run lint
               npm run typecheck
               npm run build
-              pm2 restart web-ohname
+              pm2 restart "web-ohname" --time
