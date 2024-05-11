@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Header from "@/components/header";
 import "./globals.css";
 import { openGraphImage } from "./shared-metadata";
+import SideBar from "@/components/sideBar";
 
 export const metadata: Metadata = {
     title: "oh-name",
@@ -27,9 +28,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <div className="flex flex-col min-h-screen">
-                    <Header />
-                    {children}
+                <div className="flex flex-col">
+                    <div className="flex min-h-screen">
+                        <SideBar header={<Header />} />
+                        <div className="flex-1 p-6">
+                            <div className="bg-[#232627] rounded-3xl h-full">{children}</div>
+                        </div>
+                    </div>
                 </div>
 
                 {interception}
