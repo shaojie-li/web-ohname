@@ -59,14 +59,6 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Run lint
-        run: npm run lint
-      - name: Run type check
-        run: npm run typecheck
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
   # Deployment job
   deploy:
@@ -86,5 +78,7 @@ jobs:
               git clone ${{github.server_url}}/${{ github.repository }}
               git pull
               npm install
+              npm run lint
+              npm run typecheck
               npm run build
               pm2 restart web-ohname
