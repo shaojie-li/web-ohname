@@ -1,0 +1,166 @@
+{
+    "Typescript React template": {
+        /** 唤醒代码块的命令 tsx  */
+        "prefix": "tsx",
+        "body": [
+            "/**",
+            " * @description 请添加${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}组件的描述和注释!!!",
+            " * @date 创建时间 ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}",
+            " */",
+            "",
+            "import React from \"react\"",
+            "",
+            "interface Props {}",
+            "",
+            "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}: React.FC<Props> = props => {",
+            "    const {} = props",
+            "",
+            "    return (",
+            "        <div className=''>$0</div>",
+            "   )",
+            "}",
+            "",
+            "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}",
+            ""
+        ], //代码块的主体
+        "description": "typescript React 代码模版"
+    },
+    "console.log": {
+        "prefix": "csl",
+        "body": [
+            // $0，表示焦点所在位置，${CLIPBOARD}表示剪贴板内容
+            "console.log(\"${CLIPBOARD}\", ${CLIPBOARD}$0);"
+        ],
+        "description": "console.log()"
+    },
+    "window.location.href": {
+        "prefix": "href",
+        "body": [
+            "window.location.href"
+        ]
+    },
+    "window.location.search": {
+        "prefix": "search",
+        "body": [
+            "window.location.search"
+        ]
+    },
+    "useEffect": {
+        "prefix": "effect",
+        "body": [
+            "useEffect(() => {",
+            "",
+            "},[])"
+        ]
+    },
+    "useState": {
+        "prefix": "state",
+        "body": [
+            "const [_, set] = useState<boolean>(true)",
+        ]
+    },
+    "useMemo": {
+        "prefix": "memo",
+        "body": [
+            "const data = useMemo(() => {",
+            "",
+            "},[])"
+        ]
+    },
+    "div": {
+        "prefix": "div",
+        "body": [
+            "<div className=\"\">$0</div>"
+        ]
+    },
+    "className": {
+        "prefix": "className",
+        "body": [
+            "className={classes.}"
+        ]
+    },
+    "Button": {
+        "prefix": "Btn",
+        "body": [
+            "<Button",
+            "   color=\"primary\"",
+            "   variant=\"contained\"",
+            "   className={classes.btnName}",
+            "   onClick={() => {}}",
+            ">",
+            "</Button>"
+        ]
+    },
+    "display:flex": {
+        "prefix": "flex",
+        "body": [
+            "display: \"flex\",",
+            "alignItems: \"center\",",
+            "justifyContent: \"center\","
+        ]
+    },
+    "display:grid": {
+        "prefix": "grid",
+        "body": [
+            "display: \"grid\",",
+            "\"grid-template-columns\": \"repeat(2, 1fr)\",",
+            "gridGap: 10,"
+        ]
+    },
+    "text": {
+        "prefix": "text",
+        "body": [
+            "color: \"#000000\",",
+            "fontSize: 16,",
+            "fontWeight: \"bold\",",
+        ]
+    },
+    "&:before": {
+        "prefix": "before",
+        "body": [
+            "\"&:before\": {",
+            "    content: '\"\"',",
+            "    position: \"absolute\",",
+            "    height: \"\",",
+            "    width: \"\",",
+            "    top:0,",
+            "    right:0,",
+            "    bottom:0,",
+            "    left:0,",
+            "},"
+        ]
+    },
+    "&:after": {
+        "prefix": "after",
+        "body": [
+            "\"&:after\": {",
+            "    content: '\"\"',",
+            "    position: \"absolute\",",
+            "    height: \"\",",
+            "    width: \"\",",
+            "    top: 0,",
+            "    right: 0,",
+            "    bottom: 0,",
+            "    left: 0,",
+            "},"
+        ]
+    },
+    "&:first-child": {
+        "prefix": "first",
+        "body": [
+            "\"&:first-child\":{}",
+        ]
+    },
+    "&:last-child": {
+        "prefix": "last",
+        "body": [
+            "\"&:last-child\":{}",
+        ]
+    },
+    "&:nth-child": {
+        "prefix": "nth",
+        "body": [
+            "\"&:nth-child()\":{}",
+        ]
+    },
+}
