@@ -83,7 +83,7 @@ jobs:
             script: |
               cd /home/${{ secrets.USER_NAME }}/www
               rm -rf web-ohname
-              git clone ${{ github.repository }}
+              git clone ${{github.server_url}}/${{ github.repository }}
               git pull
               npm install
               npm run build
