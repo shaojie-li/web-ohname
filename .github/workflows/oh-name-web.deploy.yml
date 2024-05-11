@@ -81,8 +81,9 @@ jobs:
             username: ${{ secrets.USER_NAME }}
             password: ${{ secrets.USER_PASSWORD }}
             script: |
-              cd /home/lishaojie/www
+              cd /home/${{ secrets.USER_NAME }}/www
               rm -rf web-ohname
+              git clone ${{ github.repository }} /home/${{ secrets.USER_NAME }}/project
               git pull
               npm install
               npm run build
