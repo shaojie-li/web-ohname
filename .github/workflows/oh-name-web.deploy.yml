@@ -76,7 +76,6 @@ jobs:
               cd /home/${{ secrets.USER_NAME }}/www
               rm -rf web-ohname
               git clone ${{github.server_url}}/${{ github.repository }}
-              git pull
               npm install
               npm run lint
               npm run typecheck
