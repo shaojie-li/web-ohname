@@ -8,7 +8,7 @@ import React from "react";
 const getMockStaticData = () => {
     return new Promise<{ name: string }>(resolve => {
         setTimeout(() => {
-            resolve({ name: "sj" });
+            resolve({ name: "LL" });
         }, 1000);
     });
 };
