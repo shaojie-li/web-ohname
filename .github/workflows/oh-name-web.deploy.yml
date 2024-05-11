@@ -82,6 +82,7 @@ jobs:
             password: ${{ secrets.USER_PASSWORD }}
             script: |
               cd /home/lishaojie/www
+              rm -rf web-ohname
               git pull
               npm install
               npm run build
