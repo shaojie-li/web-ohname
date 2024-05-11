@@ -7,3 +7,6 @@ LICENSE.md
 tsconfig.json
 tsconfig.*.json
 node_modules
+.github
+.vscode
+.idea
