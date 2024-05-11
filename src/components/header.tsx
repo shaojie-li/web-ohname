@@ -17,7 +17,7 @@ const Header: React.FC = async () => {
     const staticData = await getMockStaticData();
 
     return (
-        <div className="w-full flex items-center justify-center bg-blue-700 px-6 py-3 justify-between">
+        <div className="w-full flex items-center bg-blue-700 px-6 py-3 justify-between">
             Header <div>{staticData.name}</div>
         </div>
     );
