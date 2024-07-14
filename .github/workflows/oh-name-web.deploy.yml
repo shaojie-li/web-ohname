@@ -36,7 +36,6 @@ jobs:
           source: './'
           target: /home/${{ secrets.USER_NAME }}/www/web-ohname/
       - name: Restore cache
-        id: cache-npm
         uses: actions/cache@v4
         with:
           path: |
@@ -46,10 +45,6 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: List the state of node modules
-        continue-on-error: true
-        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        run: cd /home/${{ secrets.USER_NAME }}/www/web-ohname/ && npm install && npm run lint && npm run typecheck && npm run build
       - name: SSH Deploy
         uses: appleboy/ssh-action@master
         with:
@@ -58,4 +53,8 @@ jobs:
             password: ${{ secrets.USER_PASSWORD }}
             script: |
               cd /home/${{ secrets.USER_NAME }}/www/web-ohname/
+              npm install
+              npm run lint
+              npm run typecheck
+              npm run build
               pm2 restart "web-ohname" --time

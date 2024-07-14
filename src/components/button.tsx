@@ -10,7 +10,7 @@ interface Props extends PropsWithChildren {}
 const Button: React.FC<Props> = props => {
     const { children } = props;
 
-    return <button className="py-1 px-4 outline-none bg-blue-600 rounded">{children}</button>;
+    return <button className="py-2 px-4 outline-none bg-blue-600 rounded">{children}</button>;
 };
 
 export default Button;
