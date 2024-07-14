@@ -18,7 +18,7 @@ const SideBar: React.FC<Props> = props => {
                 <div>{header}</div>
 
                 <nav className="flex-1 py-2 space-y-1">
-                    <div className="py-2 px-3">Index</div>
+                    <div className="py-2 px-3">Home</div>
                     <div className="py-2 px-3">About</div>
                 </nav>
             </div>
